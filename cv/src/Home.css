@@ -1,0 +1,188 @@
+.app {
+  text-align: center;
+  width: 114%; /* Chiếm 90% chiều rộng màn hình */
+  max-width: 1400px; /* Giới hạn chiều rộng tối đa */
+  min-width: 1000px; /* Đảm bảo chiều rộng tối thiểu */
+  height: 130%; /* Chiếm toàn bộ chiều cao của màn hình */
+  max-height: 190vh; /* Giới hạn chiều cao tối đa bằng chiều cao màn hình */
+  background-color: white;
+  margin-left: -80px;
+  margin-right: -50px;
+  margin-top: -15px;
+  margin-bottom: -70px;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Cân bằng không gian giữa các phần tử */
+  align-items: center; /* Căn giữa các phần tử theo chiều ngang */
+  overflow: hidden; /* Ngăn chặn thanh cuộn */
+  font-family: 'Arial', sans-serif; /* Chỉ áp dụng font cho .app */
+}
+
+.header {
+  margin-bottom: 40px;
+  width: 100%; /* Đảm bảo phần tiêu đề chiếm 100% chiều rộng của phần app */
+  background:  rgb(255, 243, 224);
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.title {
+  margin-top: 10px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0; /* Bắt đầu với trạng thái ẩn */
+  animation: fadeInLeft 2s ease-out forwards; /* Hiệu ứng fade từ trái */
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); /* Chữ bắt đầu từ bên trái */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Đưa chữ về vị trí gốc */
+  }
+}
+.subtitle {
+  font-size: 20px;
+  color: #333;
+  margin-top: 10px;
+
+}
+.cv-item {
+  flex: 0 0 100%; /* Mỗi ảnh chiếm 20% gallery */
+  max-width: 200px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cv-image {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.expanded-image {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.get-started {
+  text-align: center;
+
+  margin-bottom: 10px;
+}
+
+.get-started-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  background-color: rgb(240, 128, 128);
+  color: white;
+  border-radius: 5px;
+}
+
+.get-started-btn:hover {
+  background-color: rgb(255, 127, 80);
+}
+
+.cv-gallery {
+  display: flex;
+  justify-content: space-evenly; /* Cách đều nhau giữa các ảnh */
+  margin-bottom: 30px;
+  gap: 30px; /* Tăng khoảng cách giữa các ảnh */
+  margin-top: 25px;
+}
+
+.cv-item {
+  width: 250px;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.cv-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.1);
+}
+
+.cv-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.cv-item:hover .cv-image {
+  transform: scale(1.05);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+}
+
+.expanded-image {
+  max-width: 90%;
+  max-height: 90vh;
+  border-radius: 12px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+}
+
+
+
